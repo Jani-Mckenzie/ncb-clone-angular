@@ -1,3 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "sans-serif";
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background: rgb(225, 223, 223);
+  position: relative;
+  justify-content: space-between;
+  text-align: center;
+  padding: 15px 30px;
+}
+
+header ol {
+  display: flex;
+  list-style: none;
+  margin: auto 0;
+}
+
+header ol li {
+  margin: 0 2px;
+}
+
+header ol li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+}
+
+header ol li:hover a {
+  background: blue;
+  color: black;
+}
+
+header .search_bar {
+  display: flex;
+  margin: auto 0;
+  height: 35px;
+  line-height: 35px;
+}
+
+header .search_bar input {
+  border: none;
+  outline: none;
+  background: #fff;
+  height: 100%;
+  padding: 0 10px;
+  font-size: 20px;
+  width: 350px;
+}
+
+header .search_bar span {
+  color: blue;
+  font-size: 20px;
+  background: #fff;
+  height: 100%;
+  padding: 8px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+
+header .search_bar span::after {
+  height: 100%;
+  width: 0px;
+  content: "";
+  background: blue;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
 .Nav {
   display: flex;
   width: 500px;

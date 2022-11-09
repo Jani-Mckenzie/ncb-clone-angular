@@ -7,11 +7,160 @@
   background-size: cover;
   object-fit: cover;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay{
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.301);
+  background-color: rgba(255, 255, 255, 0);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.login-cont{
+  width: fit-content;
+  height: 500px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.329);
+  border-radius: 0px 8px 8px 0px;
+}
+
+.banner{
+  width: 26vw;
+  height: 100%;
+}
+
+.left{
+  background-image: linear-gradient(180deg, var(--pri-light-blue), var(--pri-blue) , var(--pri-dark-blue));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100px 0px;
+  align-items: center;
+}
+
+.right{
+  background-color: white;
+  border-radius: 0px 8px 8px 0px;
+  background-image: url('/assets/images/gradient-bg.png');
+  background-position: center;
+  background-size: contain;
+  padding: 30px 20px;
+}
+
+.size{
+  width: 220px;
+}
+
+.welcome-text{
+  font-size: 22px;
+  font-family: var(--pri-font);
+  font-weight: 400;
+  color: white;
+  animation-name: fontGrow;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+  letter-spacing: 3px;
+}
+
+.form-cont{
+  z-index: 2;
+}
+
+.form-title{
+  font-size: 25px;
+  font-weight: bolder;
+  color: var(--pri-light-blue);
+  font-family: var(--pri-font);
+  letter-spacing: 2.5px;
+  margin-bottom: 1.75em;
+}
+
+.form-ctrl{
+  margin-top: 1.75em;
+}
+
+.form-ctrl label{
+  display: block;
+  font-family: var(--pri-font);
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: .25em;
+}
+
+.form-ctrl input{
+  font-family: var(--pri-font);
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  padding: 2px 10px;
+}
+
+.remember-cont{
+  margin-top: 1em;
+  display:flex;
+  align-items:flex-start;
+  gap:.5em;
+  font-family: var(--pri-font);
+}
+
+.remember-cont label{
+  font-size: 12px;
+}
+
+.btn-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4em;
+}
+
+.btn{
+  font-family: var(--pri-font);
+  font-size: 18px;
+  color: white;
+  background-color: var(--pri-light-blue);
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  width: 9em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@keyframes fontGrow {
+  0%{
+    font-size: 22px;
+  }
+
+  33.3%{
+    font-size: 24px;
+  }
+
+  66.6%{
+    font-size: 26px;
+  }
+
+  100%{
+    font-size: 28px ;
+  }
 }

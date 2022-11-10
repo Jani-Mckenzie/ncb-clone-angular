@@ -11,30 +11,38 @@
         </div>
       </div>
       <div class="right banner">
+       <form action="" [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm)">
         <div class="form-cont">
           <h2 class="form-title">Login</h2>
 
           <div class="form-ctrl">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" formControlName="username">
           </div>
 
           <div class="form-ctrl">
             <label for="password">Password</label>
 
-            <input type="password" name="password" id="password" >
+            <input type="{{passwordInput}}" name="password" id="password" formControlName="password">
+
+            <i class="fa-solid fa-eye eye" *ngIf="passwordInput == 'password'" (click)="showPassword()"></i>
+            <i class="fa-solid fa-eye-slash eye" *ngIf="passwordInput == 'text'" (click)="showText()"></i>
           </div>
 
           <div class="remember-cont">
-            <input type="checkbox" name="remember" id="">
+            <input type="checkbox" name="remember" id="" (click)="togglePassword($event)">
             <label for="">Remember Me</label>
           </div>
 
           <div class="btn-cont">
-            <button class="btn" routerLink="/dashboard">Login</button>
+            <button
+            class="btn"
+            [ngClass]=" loginForm.valid && password?.dirty ? 'in' : 'out' "
+            >Login</button>
           </div>
 
         </div>
+       </form>
 
       </div>
     </div>

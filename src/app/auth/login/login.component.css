@@ -56,11 +56,11 @@
 }
 
 .size{
-  width: 220px;
+  width: min(220px , 25vw);
 }
 
 .welcome-text{
-  font-size: 22px;
+  font-size: 2vw;
   font-family: var(--pri-font);
   font-weight: 400;
   color: white;
@@ -173,18 +173,18 @@
 
 @keyframes fontGrow {
   0%{
-    font-size: 22px;
+    font-size: 2vw;
   }
 
   33.3%{
-    font-size: 24px;
+    font-size: 2.25vw;
   }
 
   66.6%{
-    font-size: 26px;
+    font-size: 2.5vw;
   }
 
   100%{
-    font-size: 28px ;
+    font-size: 2.75vw;
   }
 }

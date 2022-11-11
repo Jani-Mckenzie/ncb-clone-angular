@@ -1,7 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
+
+:root{
+  --pri-light-blue: #277BC4;
+  --pri-blue:#175894;
+  --pri-dark-blue: #05315F;
+  --pri-font: 'Roboto', sans-serif;
+
+}
+

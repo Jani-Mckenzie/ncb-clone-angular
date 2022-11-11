@@ -25,7 +25,10 @@ export class AuthService {
 
   loginUser(userCred:Partial<User>):Observable<ApiResponse<User>>{
     const user = this.http.post<ApiResponse<User>>(`${this.API_ENDPOINT}/login`, userCred , this.options).pipe(
-      tap((userlog : ApiResponse<User>) =>  this.token = (userlog.data!['accessToken'] as unknown) as string),
+      tap((userlog : ApiResponse<User>) =>  {
+        this.token = (userlog.data!['accessToken'] as unknown) as string;
+        window.sessionStorage.setItem('token',this.token);
+      }),
       catchError(err => throwError(() =>  err ))
       );
     return user
@@ -36,7 +39,15 @@ export class AuthService {
     return this.token!;
   }
 
+  isLoggedin():boolean{
+    let token = window.sessionStorage.getItem('token');
 
+    if(token){
+      return true;
+    }
+      return false;
+
+  }
 
 
 }

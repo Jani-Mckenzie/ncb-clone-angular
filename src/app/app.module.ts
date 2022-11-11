@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
+import { TokenInterceptor } from './shared/interceptors/token.interceptor';
 
 
 
@@ -30,7 +31,9 @@ import { LoginComponent } from './auth/login/login.component';
   exports: [
 
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS , useClass: TokenInterceptor , multi:true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

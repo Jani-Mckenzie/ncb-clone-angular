@@ -15,12 +15,12 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-      { path: 'dashboardpage', component: DashboardPageComponent, canActivate:[AuthGuard] },
-      { path: 'accounts', component: AccountsComponent, canActivate:[AuthGuard] },
-      { path: 'account-detail:id', component: AccountDetailsComponent, canActivate:[AuthGuard] },
-      { path: 'top-up', component: TopUpComponent, canActivate:[AuthGuard]  },
-      { path: 'transfer', component: TransferComponent, canActivate:[AuthGuard]  },
-      { path: 'billpay', component: BillpayComponent, canActivate:[AuthGuard]  },
+      { path: 'dashboardpage', component: DashboardPageComponent },
+      { path: 'accounts', component: AccountsComponent, canActivate: [AuthGuard] },
+      { path: 'account-detail:id', component: AccountDetailsComponent, canActivate: [AuthGuard] },
+      { path: 'top-up', component: TopUpComponent, canActivate: [AuthGuard] },
+      { path: 'transfer', component: TransferComponent, canActivate: [AuthGuard] },
+      { path: 'billpay', component: BillpayComponent, canActivate: [AuthGuard] },
       { path: '', redirectTo: 'dashboardpage', pathMatch: 'full' }
     ]
   }

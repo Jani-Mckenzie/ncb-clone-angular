@@ -38,6 +38,7 @@ header ol li a {
 header ol li:hover a {
   background: blue;
   color: black;
+  cursor: pointer;
 }
 
 header .search_bar {

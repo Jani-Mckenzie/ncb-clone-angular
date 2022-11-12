@@ -8,7 +8,9 @@
     </div>
     <ol>
         <li>
-            <p>Hello, JANE DOE </p>
+            <p>Hello, {{currentUser?.firstName}} {{ currentUser?.lastName}}
+                {{currentUser?.username}}
+            </p>
         </li>
 
         <li><a href="#">
@@ -20,9 +22,7 @@
             </a>
         </li>
 
-        <li><a href="#">
-                <i class="fa-solid fa-right-from-bracket"></i>
-            </a>
+        <li><a (click)="logout()">Logout</a>
         </li>
 
     </ol>

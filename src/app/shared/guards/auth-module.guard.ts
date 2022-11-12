@@ -10,27 +10,27 @@ import Swal from 'sweetalert2';
 export class AuthModuleGuard implements CanLoad {
 
   constructor(
-    private router : Router,
-    private authService : AuthService
-    ){}
+    private router: Router,
+    private authService: AuthService
+  ) { }
   canLoad(
     route: Route,
-    segments: UrlSegment[]):  boolean {
+    segments: UrlSegment[]): boolean {
 
-      let userToken = this.authService.getToken();
-      let loggedIn = false;
+    let userToken = this.authService.getToken();
+    let loggedIn: boolean = false;
 
-      if(userToken){
-        loggedIn = true;
-        return loggedIn
-      }else{
-        Swal.fire(
-          'Login Required',
-          'You must first login',
-          'error'
-        )
-        this.router.navigate(['/']);
-      }
+    if (!userToken) {
+      Swal.fire(
+        'Login Required',
+        'You must first login',
+        'error'
+      )
+      this.router.navigate(['/auth/login']);
+      return loggedIn
+    } else {
+      loggedIn = true;
       return loggedIn;
+    }
   }
 }

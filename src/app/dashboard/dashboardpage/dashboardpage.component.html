@@ -1,1 +1,70 @@
-<p>dashboard Page works!</p>
+<main class="container">
+
+    <div class="left">
+
+        <details class="Dropdown1">
+            <summary>Operative Accounts</summary>
+            <div class="card" *ngFor="let account of accounts">
+                <div>
+                    <p>A/C Number</p>
+                    <p>{{account.accNo}}</p>
+                </div>
+                <div>
+                    <p>A/C Name</p>
+                    <p>{{account.accType.name}}</p>
+                </div>
+                <div>
+                    <p>A/C Balance</p>
+                    <p>{{account.balance}}</p>
+                </div>
+            </div>
+        </details>
+
+        <details class="Dropdown2">
+            <summary>Credit Cards</summary>
+
+        </details>
+
+
+        <details class="Dropdown3">
+            <summary class="head">
+                <h2>Recent Transers </h2>
+                <h3>View All</h3>
+            </summary>
+            <div class="card" *ngFor="let transaction of transactions">
+                <div>
+                    <p>A/C Number</p>
+                    <p>{{transaction.accId}}</p>
+                </div>
+                <div>
+                    <p>Description</p>
+                    <p>{{transaction.description}}</p>
+                </div>
+                <div>
+                    <p>Date</p>
+                    <p>{{transaction.createdAt | date}}</p>
+                </div>
+            </div>
+        </details>
+
+    </div>
+    <div class="right">
+        <div class="right">
+
+            <div class="float-tab1"></div>
+
+            <div class="float-tab2">
+                <div class="qLinks">
+                    <img src="../assets/images/quick1.png" alt=""> Quick links
+                </div>
+                <div>
+                    <li>Transfer Money</li>
+                    <li>Bill Payment</li>
+                    <li>Top Up</li>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

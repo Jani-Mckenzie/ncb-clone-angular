@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/models/user.model';
-import { AuthService } from 'src/app/shared/services/auth.service';7
+import { AuthService } from 'src/app/shared/services/auth.service'; 7
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,58 +13,58 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  passwordToggle = true ;
+  passwordToggle = true;
   passwordInput = "password";
-  rememberMe : boolean = false;
-  userAcc !: User ;
-  invalidCred : boolean = false;
-  loginCount : number = 0;
+  rememberMe: boolean = false;
+  userAcc !: User;
+  invalidCred: boolean = false;
+  loginCount: number = 0;
 
 
   constructor(
-    private router : Router,
-    private authService : AuthService
-    ) { }
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
   loginForm = new FormGroup({
-    username : new FormControl('',[Validators.required]),
-    password : new FormControl('',[Validators.required])
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
   })
 
 
-  togglePassword(event : any){
-    if(event.target?.checked == true){
+  togglePassword(event: any) {
+    if (event.target?.checked == true) {
       this.rememberMe = true;
     }
   }
 
-  showPassword(){
+  showPassword() {
     this.passwordInput = "text";
   }
 
-  showText(){
+  showText() {
     this.passwordInput = "password";
   }
 
-  loginUser(form:any){
-    if(this.loginForm.valid){
+  loginUser(form: any) {
+    if (this.loginForm.valid) {
 
-      let userCred : Partial<User> = {
-        username : this.username?.value!,
-        password : this.password?.value!
+      let userCred: Partial<User> = {
+        username: this.username?.value!,
+        password: this.password?.value!
       }
 
       this.authService.loginUser(userCred).subscribe({
         next: (res) => {
-          if(res){
+          if (res) {
             this.userAcc = res.data!['user'];
           }
         },
-        error: (err : HttpErrorResponse) => {
-          if(err.error.data.error = "User not found"){
+        error: (err: HttpErrorResponse) => {
+          if (err?.error?.data?.error === "User not found") {
             this.loginCount++;
             Swal.fire(
               'Login Failed!',
@@ -72,8 +72,6 @@ export class LoginComponent implements OnInit {
               'warning'
             )
           }
-
-          console.log(err.error.data.error);
 
         },
         complete: () => {
@@ -85,8 +83,8 @@ export class LoginComponent implements OnInit {
   }
 
 
-  get username() {return this.loginForm.get('username');}
-  get password() { return this.loginForm.get('password');}
+  get username() { return this.loginForm.get('username'); }
+  get password() { return this.loginForm.get('password'); }
 
 
 }

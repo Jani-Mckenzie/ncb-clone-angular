@@ -28,6 +28,9 @@ export class AuthService {
       tap((userlog : ApiResponse<User>) =>  {
         this.token = (userlog.data!['accessToken'] as unknown) as string;
         window.sessionStorage.setItem('token',this.token);
+        let userInfo = this.token.split(".")[1];
+        userInfo = window.atob(userInfo);
+        window.sessionStorage.setItem('user',userInfo);
       }),
       catchError(err => throwError(() =>  err ))
       );
@@ -48,6 +51,12 @@ export class AuthService {
       return false;
 
   }
+
+  getUser(){
+   let user =  JSON.parse(window.sessionStorage.getItem('user')!);
+   return user;
+  }
+
 
 
 }

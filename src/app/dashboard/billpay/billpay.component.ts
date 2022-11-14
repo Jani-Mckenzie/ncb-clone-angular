@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { createTransaction } from 'src/app/shared/models/createTransaction';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { TransactionService } from 'src/app/shared/services/transaction.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-billpay',
@@ -36,7 +38,6 @@ export class BillpayComponent implements OnInit {
       let i: number;
       for (i = 0; this.accounts.length > i; i++) {
         this.transactions = [...this.accounts[i].transactions];
-        console.log(this.currentUser);
       }
     });
   }
@@ -44,15 +45,30 @@ export class BillpayComponent implements OnInit {
 
 
   payBill(form:any){
-      let formVal = {
-        transactionsType : this.transactionType?.value,
+
+    if(this.billForm.valid){
+      let formVal : createTransaction = {
+        transactionType : this.transactionType?.value!,
         accountId : this.accounts[0]._id,
-        amount : this.amount?.value,
-        description: this.description?.value
+        amount : this.amount?.value!,
+        description: this.description?.value!
       };
       console.log(formVal);
 
-    // this.transService.createTransaction()
+    this.transService.createTransaction(formVal).subscribe({
+      next: () =>{
+        Swal.fire(
+          'Transaction completed!',
+          '',
+          'success'
+        )
+        this.billForm.reset()
+      },
+
+    })
+    }
+
+
   }
 
 

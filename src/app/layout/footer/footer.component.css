@@ -42,12 +42,12 @@
 
 .mid {
   width: 100%;
-  height: 250px;
+  height: 225px;
   background-color: #3e3b3b;
-  display: flex;
-  gap: 300px;
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
   justify-content: center;
-  padding-top: 50px;
+  place-items: center;
 }
 .title {
   font-size: 1.5em;

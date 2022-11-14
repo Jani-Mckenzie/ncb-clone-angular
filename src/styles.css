@@ -8,6 +8,49 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: #f7f7f7;
+}
+
+.form-ctrl{
+  width: 100%;
+}
+
+.form-ctrl label{
+  display: block;
+}
+
+.form-ctrl input , select{
+  width:  280px;
+  margin-top: 10px;
+  height: 35px;
+  border: 0.1px solid silver;
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin-bottom: 15px;
+}
+
+.btn-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  font-size: 14px;
+  color: white;
+  background-color: var(--pri-light-blue);
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  width: 9em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease 50ms;
+}
+
+
 :root {
   --pri-light-blue: #277bc4;
   --pri-blue: #175894;

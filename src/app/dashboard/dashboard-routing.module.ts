@@ -22,7 +22,7 @@ const routes: Routes = [
       {
         path: 'transfer', component: TransferComponent,
       },
-      { path: 'billpay', component: BillpayComponent, },
+      { path: 'billpay', component: BillpayComponent, data:[{showSide:false}] },
       { path: '', redirectTo: 'dashboardpage', pathMatch: 'full' }
     ]
   }

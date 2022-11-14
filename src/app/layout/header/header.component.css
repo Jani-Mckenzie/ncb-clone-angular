@@ -168,7 +168,7 @@ header .search_bar span::after {
 
 
 
-/* header{
+header{
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -297,4 +297,4 @@ header .search_bar span::after {
   z-index: 4;
   font-weight: 300;
   font-size: 19px;
-} */
+}

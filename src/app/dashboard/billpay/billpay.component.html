@@ -1,19 +1,20 @@
 <div class="bill-cont">
-  <form action="" >
+  <form action="" [formGroup]="billForm" (ngSubmit)="payBill(billForm)">
     <div class="upper-flex">
     <div class="form-ctrl">
       <label for="">Bill Type*</label>
-      <input type="text" placeholder="Select" >
+      <select name="transactionType" id="" formControlName="transactionType">
+        <option value="{{creditId}}">Credit</option>
+        <!-- <option value="{{debitId}}">Debit</option> -->
+      </select>
     </div>
 
     <div>
       <div class="form-ctrl">
         <label for="">Payee Info</label>
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Name" formControlName="description">
       </div>
-      <div class="form-ctrl">
-        <input type="text" placeholder="Account Info">
-      </div>
+
     </div>
   </div>
   <div class="lower-flex">
@@ -25,13 +26,15 @@
       <select name="currency" id="">
         <option value="JMD">JMD</option>
         </select>
-        <div class="form-ctrl"><input type="text" placeholder="Amount"></div>
+        <div class="form-ctrl">
+          <input type="number" placeholder="Amount" formControlName="amount" min="1">
+        </div>
     </div>
 
   </div>
 
   <div class="btn-cont">
-    <button class="btn">Pay bill</button>
+    <button class="btn" (click)="payBill(billForm)">Pay bill</button>
   </div>
   </form>
 </div>

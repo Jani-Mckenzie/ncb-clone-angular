@@ -47,20 +47,25 @@
                 <h2>Recent Transfers </h2>
                 <h3>View All</h3>
             </summary>
-            <div class="card" *ngFor="let transaction of transactions ">
-                <div>
-                    <p class="title">A/C Number</p>
-                    <p class="detials">{{transaction.accId}}</p>
+
+            <div class="card-sub">
+                <div class="card" *ngFor="let transaction of transactions ">
+                    <div>
+                        <p class="title">A/C Number</p>
+                        <p class="detials">{{transaction.accId}}</p>
+                    </div>
+                    <div>
+                        <p class="title">Description</p>
+                        <p class="detials">{{transaction.description}}</p>
+                    </div>
+                    <div>
+                        <p class="title">Date</p>
+                        <p class="detials">{{transaction.createdAt | date}}</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="title">Description</p>
-                    <p class="detials">{{transaction.description}}</p>
-                </div>
-                <div>
-                    <p class="title">Date</p>
-                    <p class="detials">{{transaction.createdAt | date}}</p>
-                </div>
+
             </div>
+
             <div *ngIf="!transactions.length" class="notify"> No Transaction</div>
         </details>
 

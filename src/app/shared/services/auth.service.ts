@@ -82,8 +82,8 @@ export class AuthService {
     window.sessionStorage.removeItem('auth_meta');
     window.sessionStorage.removeItem('token');
     this.loggedInUser$.next(undefined);
-    this.token = new DecodedToken();
-    this.decodedToken = new DecodedToken();
+    // this.token = new DecodedToken();
+    // this.decodedToken = new DecodedToken();
 
   }
 

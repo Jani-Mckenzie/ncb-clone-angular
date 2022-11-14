@@ -1,0 +1,78 @@
+.float-tab2 {
+  width: 100%;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.float-tab1 {
+  width: 100%;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 2px -2px gray;
+  border-top: 40px solid rgba(46, 46, 46, 0.164);
+  border-left: 1px solid rgba(46, 46, 46, 0.164);
+  border-right: 1px solid rgba(46, 46, 46, 0.164);
+  border-radius: 10px;
+  font-size: 1.8em;
+}
+
+.float-tab1 p {
+  text-align: center;
+  padding-top: 5%;
+  color: #004785;
+}
+
+.qLinks {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  color: #fff;
+  background-color: #024786;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+.qLinks > img {
+  margin-right: 10px;
+}
+
+.link {
+  height: 50%;
+  box-shadow: 0 4px 2px -2px gray;
+  border: 1px solid rgba(128, 128, 128, 0.315);
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 30px;
+}
+.link img {
+  height: fit-content;
+}
+
+.link li {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.link li a {
+  text-decoration: none;
+  color: #004785;
+}
+.link li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.link li:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.right {
+  width: 70%;
+  font-family: "Inter";
+  font-style: normal;
+}

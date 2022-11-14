@@ -90,7 +90,7 @@ export class AuthService {
   getToken(): string {
 
     this.token = window.sessionStorage.getItem('token');
-    console.log(this.token);
+    // console.log(this.token);
     return this.token!;
   }
 

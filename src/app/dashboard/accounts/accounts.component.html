@@ -1,1 +1,39 @@
-<p>accounts works!</p>
+<div>
+
+    <div class="tab1">
+        <div class="search-bar">
+            <div class="L1">Quick Search</div>
+            <div class="L2">
+                <input type="text">
+            </div>
+            <div class="search-btn"> <button>Search</button> </div>
+        </div>
+
+    </div>
+
+    <div class="tab">
+        <div class="header"> Bank Accounts </div>
+        <div class="card" *ngFor="let account of accounts">
+            <div>
+                <p class="title">A/C Number</p>
+                <p class="detials">{{account?.accNo}}</p>
+            </div>
+            <div>
+                <p class="title">Account Name</p>
+                <p class="detials">{{account?.accType?.name}}</p>
+            </div>
+            <div>
+                <p class="title">Account Status</p>
+                <p class="detials">{{account?.status | currency}}</p>
+            </div>
+            <div>
+                <p class="title">Account Balance</p>
+                <p class="detials">{{account?.balance | currency}}</p>
+            </div>
+        </div>
+        <div *ngIf="!accounts.length" class="notify"> No available Accounts</div>
+    </div>
+
+
+
+</div>

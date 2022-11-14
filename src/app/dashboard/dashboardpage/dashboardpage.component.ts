@@ -13,17 +13,21 @@ export class DashboardPageComponent implements OnInit {
   constructor(private authService: AuthService, private userService: UserService) { }
   user: any;
 
-  currentUser?: User;
+  currentUser?: any;
   accounts?: any = [];
   transactions?: any = [];
+  creditCards?: any = [];
 
   ngOnInit(): void {
     this.authService.loggedInUser$.subscribe(res => {
       this.currentUser = res;
       this.accounts = this.currentUser?.accounts;
-      this.transactions = this.accounts[0].transactions;
-      console.log(this.currentUser, this.transactions);
-
+      this.creditCards = this.currentUser?.creditCards;
+      let i: number;
+      for (i = 0; this.accounts.length > i; i++) {
+        this.transactions = [...this.accounts[i].transactions];
+        console.log(this.currentUser);
+      }
     });
 
   }

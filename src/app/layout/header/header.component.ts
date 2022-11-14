@@ -12,7 +12,7 @@ import { User } from '../../shared/models/user.model'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  currentUser?: any;
+  currentUser?: any = [];
 
 
   constructor(private authService: AuthService, private router: Router, private userService: UserService) { }
@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
     this.authService.loggedInUser$.subscribe(res => {
       this.currentUser = res;
     });
-    this.authService.autoLogin();
   }
 
   // getCurrentUser() {

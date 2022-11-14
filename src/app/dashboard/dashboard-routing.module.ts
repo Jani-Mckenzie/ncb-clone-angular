@@ -16,11 +16,13 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: 'dashboardpage', component: DashboardPageComponent },
-      { path: 'accounts', component: AccountsComponent, canActivate: [AuthGuard] },
-      { path: 'account-detail:id', component: AccountDetailsComponent, canActivate: [AuthGuard] },
-      { path: 'top-up', component: TopUpComponent, canActivate: [AuthGuard] },
-      { path: 'transfer', component: TransferComponent, canActivate: [AuthGuard] },
-      { path: 'billpay', component: BillpayComponent, canActivate: [AuthGuard] },
+      { path: 'accounts', component: AccountsComponent, },
+      { path: 'accounts/account-detail:id', component: AccountDetailsComponent, canActivate: [AuthGuard] },
+      { path: 'top-up', component: TopUpComponent, },
+      {
+        path: 'transfer', component: TransferComponent,
+      },
+      { path: 'billpay', component: BillpayComponent, },
       { path: '', redirectTo: 'dashboardpage', pathMatch: 'full' }
     ]
   }

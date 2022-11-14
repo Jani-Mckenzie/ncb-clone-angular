@@ -13,6 +13,7 @@ import { BillpayComponent } from './billpay/billpay.component';
 
 import { HeaderComponent } from '../layout/header/header.component';
 import { FooterComponent } from '../layout/footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FooterComponent } from '../layout/footer/footer.component';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
+    SidebarComponent,
   ],
   imports: [
     CommonModule,

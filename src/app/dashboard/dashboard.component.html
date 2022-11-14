@@ -1,3 +1,34 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div class="container">
+    <div class="banner" *ngIf="showBan === '/dashboard/dashboardpage'"> <img src="./assets/images/banner1.png" alt="">
+        Dashboard
+    </div>
+
+    <div class="banner" *ngIf="showBan === '/dashboard/accounts'"><img src="./assets/images/banner2.png"
+            alt="">Operative
+        Accounts </div>
+
+    <div class="banner" *ngIf="showBan === '/dashboardpage'"> <img src="./assets/images/banner3.png" alt="">Account
+        Details</div>
+
+    <div class="banner" *ngIf="showBan === '/dashboard/transfer'"> <img src="./assets/images/banner4.png"
+            alt="">Transfer
+        Fundss
+    </div>
+
+    <div class="banner" *ngIf="showBan === '/dashboard/top-up'"> <img src="./assets/images/banner5.png" alt="">Mobile
+        Top-up
+    </div>
+
+    <div class="banner" *ngIf="showBan === '/dashboard/billpay'"> <img src="./assets/images/banner6.png" alt="">Bill
+        Payments
+    </div>
+
+    <div class="container2">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+        <app-sidebar></app-sidebar>
+    </div>
+</div>
+<app-footer class="app-footer"></app-footer>

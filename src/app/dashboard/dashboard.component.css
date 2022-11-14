@@ -1,0 +1,25 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 120px 1fr;
+  margin-bottom: 60px;
+  height: 800px;
+  overflow: hidden;
+}
+.banner {
+  background-color: #0156a1;
+  width: 100%;
+  color: #fff;
+}
+.container2 {
+  padding: 40px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+.app-footer {
+  position: relative;
+}

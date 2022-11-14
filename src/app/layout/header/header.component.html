@@ -1,38 +1,61 @@
+
 <header>
-    <div class="icon"><img scr="">logo Here</div>
-    <div class="search_bar">
-        <input type="search" placeholder="search here">
-        <span>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
+  <div class="top-header">
+    <div>
+      <img class="logo-size" src="../../../assets/images/materializeLogo.png" routerLink="/dashboard/dashboardpage" routerLinkActive="router-link-active" >
     </div>
-    <ol>
-        <li>
-            <p>Hello, {{currentUser?.firstName}} {{ currentUser?.lastName}}
-                {{currentUser?.username}}
-            </p>
-        </li>
 
-        <li><a href="#">
-                <i class="fa-solid fa-user"></i>
-            </a>
-        </li>
-        <li><a href="#">
-                <i class="fa-solid fa-bell"></i>
-            </a>
-        </li>
+    <div class="search_bar">
+      <input type="search" placeholder="Search here">
+      <span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+  </div>
 
-        <li><a (click)="logout()">Logout</a>
-        </li>
+  <div class="user-cont">
+    <p>
+      <span>Hello  {{routerState}}</span> ,
+      <span>{{currentUser?.firstName}} {{ currentUser?.lastName}}</span>
+      </p>
+    <a href="#">
+      <img src="/assets/images/profilePhoto.jpg" alt="">
+  </a>
+  </div>
 
-    </ol>
+  <ol class="icons-cont">
+
+    <li>
+      <a href="#">
+            <i class="fa-solid fa-bell"></i>
+        </a>
+    </li>
+
+    <li>
+      <a (click)="logout()">
+        <span><i class="fa-solid fa-right-to-bracket"></i></span>
+        <span>Logout</span>
+      </a>
+    </li>
+
+</ol>
+
+
+  </div>
+  <div>
+    <div class="nav-cont">
+      <div class="shade"></div>
+      <div class="overlay"></div>
+    <nav>
+      <ul class="navbar">
+        <li><a routerLink="dashboardpage">Dashboard</a></li>
+        <li><a routerLink="accounts">Accounts</a></li>
+        <li><a routerLink="transfer">Transfers</a></li>
+        <li><a routerLink="billpay">BillPay</a></li>
+        <li><a routerLink="top-up">Top-Up</a></li>
+    </ul>
+    </nav>
+    </div>
+  </div>
+
 
 </header>
-
-<ul class="Nav">
-    <a routerLink="accounts">Accounts</a>
-    <a routerLink="dashboardpage">Dashboard</a>
-    <a routerLink="transfer">Transfers</a>
-    <a routerLink="billpay">BillPay</a>
-    <a routerLink="top-up">Top-Up</a>
-</ul>

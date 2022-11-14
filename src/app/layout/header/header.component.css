@@ -1,87 +1,130 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "sans-serif";
-}
-
-header {
+header{
   display: flex;
   width: 100%;
-  height: 100px;
-  background: rgb(225, 223, 223);
-  position: relative;
-  justify-content: space-between;
-  text-align: center;
-  padding: 15px 30px;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
 }
 
-header ol {
+.top-header{
+  width: 100%;
+  height: 100%;
   display: flex;
-  list-style: none;
-  margin: auto 0;
+  justify-content:space-evenly;
+  padding: 20px 0px ;
+  align-items: center;
 }
 
-header ol li {
-  margin: 0 2px;
+.logo-size{
+  width: 300px;
+  height: 50px;
+  object-fit: contain;
 }
 
-header ol li a {
-  color: #fff;
-  font-size: 20px;
-  text-decoration: none;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  padding: 5px 10px;
-}
-
-header ol li:hover a {
-  background: blue;
-  color: black;
-  cursor: pointer;
-}
-
-header .search_bar {
+.search_bar{
   display: flex;
-  margin: auto 0;
-  height: 35px;
-  line-height: 35px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 20px;
 }
 
-header .search_bar input {
+.search_bar input{
   border: none;
+  width: 100%;
+  font-family: var(--pri-font);
+  font-weight: 18px;
+}
+
+.search_bar input:focus-visible{
   outline: none;
-  background: #fff;
-  height: 100%;
-  padding: 0 10px;
-  font-size: 20px;
-  width: 350px;
 }
 
-header .search_bar span {
-  color: blue;
-  font-size: 20px;
-  background: #fff;
-  height: 100%;
-  padding: 8px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1;
-}
-
-header .search_bar span::after {
-  height: 100%;
-  width: 0px;
-  content: "";
-  background: blue;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  transition: 0.3s;
-}
-
-.Nav {
+.user-cont{
+  width: fit-content;
   display: flex;
-  width: 500px;
-  justify-content: space-between;
+  gap: 1em;
+  align-items: center;
+}
+
+.user-cont p span{
+  font-family: var(--pri-font);
+}
+
+.user-cont p span:nth-child(2){
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.icons-cont{
+  display: flex;
+  width:150px;
+  gap: .5em ;
+}
+
+.icons-cont li{
+  display: inline-block;
+  font-family: var(--pri-font);
+}
+
+.fa-bell{
+  color: black;
+}
+
+.icons-cont li {
+  padding: 0px 2px;
+  cursor: pointer;
+}
+
+
+.icons-cont li span{
+  padding: 0px 2px;
+}
+
+
+.nav-cont{
+  position: relative;
+  background-color: var(--pri-dim-light-blue);
+}
+
+.overlay{
+  width: 100%;
+  background-image: url('/assets/images/gradient-bg.png');
+  height: 100%;
+  position: absolute;
+  background-position:top;
+  background-size: fill;
+  z-index: 2;
+}
+
+.shade{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.37);
+  position: absolute;
+  background-position:top;
+  background-size: fill;
+  z-index: 3;
+}
+
+
+.navbar{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 50px;
+}
+
+.navbar li {
+  list-style-type: none;
+}
+
+.navbar li a{
+  font-family:  Roboto, sans-serif;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  z-index: 4;
+  font-weight: 300;
+  font-size: 19px;
 }

@@ -10,9 +10,8 @@ import { TopUpComponent } from './top-up/top-up.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { BillpayComponent } from './billpay/billpay.component';
-
-import { HeaderComponent } from '../layout/header/header.component';
 import { FooterComponent } from '../layout/footer/footer.component';
+import { HeaderComponent } from '../layout/header/header.component';
 
 
 @NgModule({

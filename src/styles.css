@@ -9,12 +9,18 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: var(--bckgrd);
+}
+
 
 :root{
+  --pri-dim-light-blue:#0f5b9e;
   --pri-light-blue: #277BC4;
   --pri-blue:#175894;
   --pri-dark-blue: #05315F;
   --pri-font: 'Roboto', sans-serif;
+  --bckgrd : #f4f4f4;
 
 }
 

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { UserService } from 'src/app/shared/services/user.service';
 import { User } from '../../shared/models/user.model'
@@ -15,13 +15,26 @@ export class HeaderComponent implements OnInit {
   currentUser?: any;
 
 
-  constructor(private authService: AuthService, private router: Router, private userService: UserService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private userService: UserService,
+    private activatedRoute : ActivatedRoute
+    ) { }
+
+  routerState :any;
 
   ngOnInit(): void {
     this.authService.loggedInUser$.subscribe(res => {
       this.currentUser = res;
     });
     this.authService.autoLogin();
+
+    this.activatedRoute.url.subscribe(data => {
+      this.routerState = data;
+      console.log(data);
+    });
+    console.log(JSON.stringify(this.routerState));
   }
 
   // getCurrentUser() {

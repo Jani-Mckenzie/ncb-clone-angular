@@ -1,34 +1,54 @@
 <app-header></app-header>
 <div class="container">
-    <div class="banner" *ngIf="showBan === '/dashboard/dashboardpage'"> <img src="./assets/images/banner1.png" alt="">
-        Dashboard
+
+  <div class="banner" *ngIf="curr == '/dashboard/dashboardpage' && showDef">
+  <img src="./assets/images/banner1.png" alt="">
+  <p>Dashboard</p>
+
+</div>
+    <div class="banner" *ngIf="showBan === '/dashboard/dashboardpage' ">
+      <img src="./assets/images/banner1.png" alt="">
+      <p>Dashboard</p>
     </div>
 
-    <div class="banner" *ngIf="showBan === '/dashboard/accounts'"><img src="./assets/images/banner2.png"
-            alt="">Operative
-        Accounts </div>
-
-    <div class="banner" *ngIf="showBan === '/dashboardpage'"> <img src="./assets/images/banner3.png" alt="">Account
-        Details</div>
-
-    <div class="banner" *ngIf="showBan === '/dashboard/transfer'"> <img src="./assets/images/banner4.png"
-            alt="">Transfer
-        Fundss
+    <div class="banner" *ngIf="showBan === '/dashboard/accounts'">
+      <img src="./assets/images/banner2.png"alt="">
+      <p>Operative Accounts</p>
     </div>
 
-    <div class="banner" *ngIf="showBan === '/dashboard/top-up'"> <img src="./assets/images/banner5.png" alt="">Mobile
-        Top-up
+    <div class="banner" *ngIf="showBan === '/dashboardpage'">
+       <img src="./assets/images/banner3.png" alt="">Account
+       <p>Details</p>
+      </div>
+
+    <div class="banner" *ngIf="showBan === '/dashboard/transfer'">
+      <img src="./assets/images/banner4.png" alt="">
+      <div>
+        <span>Transactions</span>
+        <p>Transfer Funds</p>
+      </div>
     </div>
 
-    <div class="banner" *ngIf="showBan === '/dashboard/billpay'"> <img src="./assets/images/banner6.png" alt="">Bill
-        Payments
+    <div class="banner" *ngIf="showBan === '/dashboard/top-up'">
+      <img src="./assets/images/banner5.png" alt="">
+      <div>
+        <span>Transactions</span>
+        <p>Mobile Top-up</p>
+      </div>
+
+    </div>
+
+    <div class="banner" *ngIf="showBan === '/dashboard/billpay'">
+      <img src="./assets/images/banner6.png" alt="">
+      <p>Bill Payments</p>
     </div>
 
     <div class="container2">
         <div>
-            <router-outlet></router-outlet>
+            <router-outlet ></router-outlet>
         </div>
-        <app-sidebar></app-sidebar>
+
+        <app-sidebar> </app-sidebar>
     </div>
 </div>
 <app-footer class="app-footer"></app-footer>

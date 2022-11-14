@@ -4,17 +4,8 @@
   box-sizing: border-box;
 }
 
-/* header {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  position: relative;
-  justify-content: space-between;
-  text-align: center;
-  padding: 15px 30px;
-}
 
-header ol {
+/* header ol {
   display: flex;
   list-style: none;
   margin: auto 0;
@@ -22,65 +13,27 @@ header ol {
 
 header ol li {
   margin: 0 2px;
-}
+} */
 
-header ol li a {
+/* header ol li a {
   color: #fff;
   font-size: 20px;
   text-decoration: none;
   text-transform: capitalize;
   letter-spacing: 1px;
   padding: 5px 10px;
-}
+} */
 
-header ol li:hover a {
+/* header ol li:hover a {
   background: blue;
   color: black;
   cursor: pointer;
-}
-
-header .search_bar {
-  display: flex;
-  margin: auto 0;
-  height: 35px;
-  line-height: 35px;
-}
-
-header .search_bar input {
-  border: none;
-  outline: none;
-  background: #fff;
-  height: 100%;
-  padding: 0 10px;
-  font-size: 20px;
-  width: 350px;
-}
-
-header .search_bar span {
-  color: blue;
-  font-size: 20px;
-  background: #fff;
-  height: 100%;
-  padding: 8px;
-  position: relative;
-  cursor: pointer;
-  z-index: 1;
-}
-
-header .search_bar span::after {
-  height: 100%;
-  width: 0px;
-  content: "";
-  background: blue;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  transition: 0.3s;
 } */
+
 
 .Nav {
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: space-between;
 }
 .IMG {
@@ -89,15 +42,19 @@ header .search_bar span::after {
 
 .nav-con {
   background-color: #004b8b;
+  width: 100%;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .link {
   text-decoration: none;
   font-size: 1.1em;
   color: #fff;
+  z-index: 999;
+  position: relative;
 }
 .nav-con ul li {
   list-style: none;
@@ -120,6 +77,8 @@ header .search_bar span::after {
   font-size: 1.1em;
   /* padding-bottom: 100px; */
   cursor: pointer;
+  z-index: 999;
+  position: relative;
 }
 
 /* /////////////////////////////////////////// */
@@ -148,6 +107,7 @@ header .search_bar span::after {
   height: 50%;
   padding-left: 10px;
   align-items: center;
+  z-index: 999;
 }
 .dropdown-content .dropbtn:hover {
   background-color: #004a8bf6;

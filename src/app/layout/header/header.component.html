@@ -43,8 +43,8 @@
             </div>
 
             <div class="dropdown-content">
-                <a class="link" routerLink="accounts">Operative Accounts</a>
-                <a class="link" routerLink="accounts">Credit Cards</a>
+                <a class="link" (click)="goToAccounts()">Operative Accounts</a>
+                <a class="link" (click)="goToAccounts()" >Credit Cards</a>
             </div>
 
         </li>
@@ -60,8 +60,9 @@
             </div>
 
         </li>
-        <li> <a class="link" routerLink="billpay">Bill Payment</a></li>
+        <li> <a class="link" (click)="goToBillPayment()">Bill Payment</a></li>
         <li><a class="link" routerLink="top-up">My Profile</a></li>
     </ul>
+    <div class="overlay"></div>
 </div>
 </header>

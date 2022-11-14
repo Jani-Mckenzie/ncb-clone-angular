@@ -1,5 +1,6 @@
 * {
   font-family: "Inter", sans-serif;
+  font-weight: 300;
 }
 
 .Dropdown1,
@@ -10,18 +11,21 @@
 .Dropdown2 > summary {
   color: rgba(0, 0, 0, 0.603);
   font-size: 1.3em;
-  padding: 30px 30px;
+  padding: 25px 30px;
   width: 80%;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  box-shadow: 1px 4px 2px -1px gray;
+  box-shadow: 1px 4px 2px -1px rgba(128, 128, 128, 0.226);
   cursor: pointer;
   list-style: none;
+  background-color: #fff;
 }
 
 .card {
+  margin-top: 10px;
   padding: 15px 30px;
   margin-bottom: 20px;
+  background-color: #fff;
   width: 80%;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -34,7 +38,7 @@
   color: rgba(0, 0, 0, 0.603);
 }
 .details {
-  font-size: 1em;
+  font-size: 0.5em;
   font-weight: 900;
   color: black;
 }
@@ -43,7 +47,7 @@
   padding-left: 25px;
   padding-right: 25px;
   background-color: #024786;
-  height: 90px;
+  height: 60px;
   list-style: none;
   color: #fff;
   display: flex;
@@ -109,6 +113,7 @@ details[open] summary ~ * {
   }
 }
 .notify {
-  font-size: 1.5em;
+  padding: 10px;
+  font-size: 1em;
   font-weight: bold;
 }

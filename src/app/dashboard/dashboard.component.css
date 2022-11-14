@@ -6,13 +6,38 @@
   display: grid;
   grid-template-rows: 120px 1fr;
   margin-bottom: 60px;
-  height: 830px;
+  height: 100vh;
   overflow: hidden;
 }
 .banner {
+  display: flex;
   background-color: #0156a1;
   width: 100%;
   color: #fff;
+  align-items: center;
+  padding: 0px 80px;
+  gap: 1em;
+}
+
+.banner p {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.banner span {
+  font-size: 14px;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.banner span + p {
+  margin-top: 10px;
+}
+
+.banner img {
+  width: 80px;
+  height: 80px;
+  object-fit: scale-down;
 }
 .container2 {
   padding: 40px;

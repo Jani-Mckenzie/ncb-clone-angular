@@ -58,6 +58,7 @@
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.103);
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
 }
 .title {
   font-size: 0.9em;
@@ -71,9 +72,9 @@
 
 .header {
   background-color: #0156a2;
-  padding: 40px 30px;
+  padding: 25px 30px;
   border-radius: 10px;
-  font-size: 2em;
+  font-size: 1.55em;
   color: white;
   font-weight: 500;
 }

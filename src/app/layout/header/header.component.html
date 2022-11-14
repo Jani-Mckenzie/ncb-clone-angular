@@ -1,32 +1,39 @@
 <header>
-    <div> <img class="icon" src="../assets/images/logo-blue.png" alt=""></div>
-    <div class="search_bar">
-        <input type="search" placeholder="search here">
-        <span>
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
+  <div class="top-header">
+    <div>
+      <img class="logo-size" src="../../../assets/images/materializeLogo.png" routerLink="/dashboard/dashboardpage" routerLinkActive="router-link-active" >
     </div>
-    <ol>
-        <li>
-            <p>Hello, {{currentUser?.firstName| uppercase}} {{ currentUser?.lastName |uppercase}}
-            </p>
-        </li>
+    <div class="search_bar">
+      <input type="search" placeholder="Search here">
+      <span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+  </div>
 
-        <li><a routerLink="/dashboard/dashboard">
-                <img class="IMG" src="./assets/images/profile.png" alt="">
-            </a>
-        </li>
-        <li><a routerLink="/dashboard/dashboard">
-                <img class="IMG" src="./assets/images/bell.png" alt="">
-            </a>
-        </li>
+  <div class="user-cont">
+    <p>
+      <span>Hello</span> ,
+      <span>{{currentUser?.firstName}} {{ currentUser?.lastName}}</span>
+      </p>
+    <a href="#">
+      <img src="/assets/images/profilePhoto.jpg" alt="">
+  </a>
+  </div>
+
+  <ol class="icons-cont">
+
+    <li>
+      <a href="#">
+            <i class="fa-solid fa-bell"></i>
+        </a>
+    </li>
 
         <li><a (click)="logout()"> <img class="IMG" src="./assets/images/logout.png" alt=""></a>
         </li>
 
     </ol>
+</div>
 
-</header>
 <div class="nav-con">
     <ul class="Nav">
         <li> <a class="link" routerLink="dashboardpage">Dashboard</a></li>
@@ -57,3 +64,4 @@
         <li><a class="link" routerLink="top-up">My Profile</a></li>
     </ul>
 </div>
+</header>

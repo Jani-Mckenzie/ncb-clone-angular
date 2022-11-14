@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -42,6 +43,11 @@ export class AuthGuard implements CanActivate {
     if (this.isLogin()) {
       return true;
     }
+    // Swal.fire(
+    //   'Login Required',
+    //   'You must first login',
+    //   'error'
+    // )
     this.router.navigate(['/auth/login']);
     return false;
   }

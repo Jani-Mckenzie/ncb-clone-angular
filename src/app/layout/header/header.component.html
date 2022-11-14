@@ -1,68 +1,69 @@
 <header>
-  <div class="top-header">
-    <div>
-      <img class="logo-size" src="../../../assets/images/materializeLogo.png" routerLink="/dashboard/dashboardpage" routerLinkActive="router-link-active" >
+    <div class="top-header">
+        <div>
+            <img class="logo-size" src="../../../assets/images/materializeLogo.png"
+                routerLink="/dashboard/dashboardpage" routerLinkActive="router-link-active">
+        </div>
+        <div class="search_bar">
+            <input type="search" placeholder="Search here">
+            <span>
+                <i class="fa-solid fa-search"></i>
+            </span>
+        </div>
+
+        <div class="user-cont">
+            <p>
+                <span>Hello</span> ,
+                <span>{{currentUser?.firstName}} {{ currentUser?.lastName}}</span>
+            </p>
+            <a href="#">
+                <img src="/assets/images/profile.png" alt="">
+            </a>
+        </div>
+
+        <ul class="icons-cont">
+
+            <li>
+                <a href="#">
+                    <img src="/assets/images/bell.png" alt="">
+                </a>
+            </li>
+
+            <li><a (click)="logout()"> <img class="IMG" src="./assets/images/logout.png" alt=""></a>
+            </li>
+
+        </ul>
     </div>
-    <div class="search_bar">
-      <input type="search" placeholder="Search here">
-      <span>
-          <i class="fa-solid fa-magnifying-glass"></i>
-      </span>
-  </div>
 
-  <div class="user-cont">
-    <p>
-      <span>Hello</span> ,
-      <span>{{currentUser?.firstName}} {{ currentUser?.lastName}}</span>
-      </p>
-    <a href="#">
-      <img src="/assets/images/profilePhoto.jpg" alt="">
-  </a>
-  </div>
+    <div class="nav-con">
+        <ul class="Nav">
+            <li> <a class="link" routerLink="dashboardpage">Dashboard</a></li>
+            <li class="dropdown">
+                <div>
+                    <button class="dropbtn"> Accounts <img src="./assets/images/downcaret.png" alt=""> </button>
+                </div>
 
-  <ol class="icons-cont">
+                <div class="dropdown-content">
+                    <a class="link" (click)="goToAccounts()">Operative Accounts</a>
+                    <a class="link" (click)="goToAccounts()">Credit Cards</a>
+                </div>
 
-    <li>
-      <a href="#">
-            <i class="fa-solid fa-bell"></i>
-        </a>
-    </li>
+            </li>
 
-        <li><a (click)="logout()"> <img class="IMG" src="./assets/images/logout.png" alt=""></a>
-        </li>
+            <li class="dropdown">
+                <div>
+                    <button class="dropbtn"> Transactions <img src="./assets/images/downcaret.png" alt=""> </button>
+                </div>
 
-    </ol>
-</div>
+                <div class="dropdown-content">
+                    <a class="link" routerLink="transfer">Transfer Funds</a>
+                    <a class="link" routerLink="top-up">Top Up</a>
+                </div>
 
-<div class="nav-con">
-    <ul class="Nav">
-        <li> <a class="link" routerLink="dashboardpage">Dashboard</a></li>
-        <li class="dropdown">
-            <div>
-                <button class="dropbtn"> Accounts <img src="./assets/images/downcaret.png" alt=""> </button>
-            </div>
-
-            <div class="dropdown-content">
-                <a class="link" (click)="goToAccounts()">Operative Accounts</a>
-                <a class="link" (click)="goToAccounts()" >Credit Cards</a>
-            </div>
-
-        </li>
-
-        <li class="dropdown">
-            <div>
-                <button class="dropbtn"> Transactions <img src="./assets/images/downcaret.png" alt=""> </button>
-            </div>
-
-            <div class="dropdown-content">
-                <a class="link" routerLink="transfer">Transfer Funds</a>
-                <a class="link" routerLink="top-up">Top Up</a>
-            </div>
-
-        </li>
-        <li> <a class="link" (click)="goToBillPayment()">Bill Payment</a></li>
-        <li><a class="link" routerLink="top-up">My Profile</a></li>
-    </ul>
-    <div class="overlay"></div>
-</div>
+            </li>
+            <li> <a class="link" (click)="goToBillPayment()">Bill Payment</a></li>
+            <li><a class="link" routerLink="top-up">My Profile</a></li>
+        </ul>
+        <div class="overlay"></div>
+    </div>
 </header>

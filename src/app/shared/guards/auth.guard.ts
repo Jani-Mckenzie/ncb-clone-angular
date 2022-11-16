@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, 
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
-import Swal from 'sweetalert2';
+
 
 
 @Injectable({
@@ -29,7 +29,7 @@ export class AuthGuard implements CanActivate, CanLoad, CanActivateChild {
     if (this.isLogin()) {
       return true;
     }
-    
+
     this.router.navigate(['/auth/login']);
     return false;
   }

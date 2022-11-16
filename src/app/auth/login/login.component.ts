@@ -76,7 +76,9 @@ export class LoginComponent implements OnInit {
         },
         complete: () => {
           this.authService.getToken();
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/dashboard']).then((val) => {
+            window.location.reload();
+          });
         }
       })
     }

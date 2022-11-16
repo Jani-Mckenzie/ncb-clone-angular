@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, 
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/auth.service';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -28,6 +29,11 @@ export class AuthGuard implements CanActivate, CanLoad, CanActivateChild {
     if (this.isLogin()) {
       return true;
     }
+    // Swal.fire(
+    //   'Login Required',
+    //   'You must first login',
+    //   'error'
+    // )
     this.router.navigate(['/auth/login']);
     return false;
   }

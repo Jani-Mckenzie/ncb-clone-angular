@@ -1,1 +1,39 @@
-<p>transfer works!</p>
+<div class="container">
+
+
+    <form #form="ngForm" (ngSubmit)="form.valid && handleSubmit()">
+        <div class="inputs">
+            <div class="form-control">
+                <label for="fromAccount">From Account</label>
+                <select [(ngModel)]="data.fromAccount" name="fromAccount" id="fromAccount" required>
+                    <option value="">Select</option>
+                    <option *ngFor="let account of accounts" [value]="account?._id">{{account?.accType?.name}}
+                        {{account?.balance |currency}}</option>
+                </select>
+            </div>
+
+            <div class="form-details">
+                <label for="toAccount">Benficiary</label>
+                <select name="toAccount" id="toAccount" [(ngModel)]="data.toAccount" required>
+                    <option value="">Select</option>
+                    <option *ngFor="let beneficiary of beneficiaries" [value]="beneficiary?.accId">
+                        {{beneficiary?.name}}
+                    </option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="inputs">
+            <div class="form-control">
+                <label for="amount"></label>
+                <input type="number" [(ngModel)]="data.amount" id="amount" name="amount" required>
+            </div>
+        </div>
+        <button (click)="handleSubmit()">Submit</button>
+    </form>
+
+
+    <!--"10010007" -->
+
+</div>

@@ -29,7 +29,7 @@ export class DashboardPageComponent implements OnInit {
         console.log(this.currentUser);
       }
     });
-
+    this.authService.autoLogin();
   }
 
 

@@ -24,8 +24,7 @@
   font-weight: 300;
 }
 
-
-.banner span{
+.banner span {
   font-size: 14px;
   font-weight: 100;
   text-transform: uppercase;
@@ -35,9 +34,9 @@
   margin-top: 10px;
 }
 
-.banner img{
+.banner img {
   width: 80px;
-  height:80px;
+  height: 80px;
   object-fit: scale-down;
 }
 .container2 {

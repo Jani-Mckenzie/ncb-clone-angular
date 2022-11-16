@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 /* header ol {
   display: flex;
   list-style: none;
@@ -29,7 +28,6 @@ header ol li {
   color: black;
   cursor: pointer;
 } */
-
 
 .Nav {
   display: flex;
@@ -56,6 +54,7 @@ header ol li {
   color: #fff;
   z-index: 999;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-con ul li {
@@ -143,8 +142,8 @@ header{
   width: 100%;
   height: 80px;
   display: flex;
-  justify-content:space-evenly;
-  padding: 20px 0px ;
+  justify-content: space-between;
+  padding: 20px 0px;
   align-items: center;
 }
 
@@ -172,86 +171,83 @@ header{
   border-radius: 20px;
 }
 
-.search_bar input{
+.search_bar input {
   border: none;
   width: 100%;
   font-family: var(--pri-font);
   font-weight: 18px;
 }
 
-.search_bar input:focus-visible{
+.search_bar input:focus-visible {
   outline: none;
 }
 
-.user-cont{
+.user-cont {
   width: fit-content;
   display: flex;
   gap: 1em;
   align-items: center;
 }
 
-.user-cont p span{
+.user-cont p span {
   font-family: var(--pri-font);
 }
-
-.user-cont p span:nth-child(2){
+.user-cont img {
+  height: 4vh;
+}
+.icons-cont img {
+  height: 3.5vh;
+}
+.user-cont p span:nth-child(2) {
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.icons-cont{
+.icons-cont {
   display: flex;
-  width:150px;
-  gap: .5em ;
-}
-
-.icons-cont li{
-  display: inline-block;
-  font-family: var(--pri-font);
-}
-
-.fa-bell{
-  color: black;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  gap: 0.5em;
 }
 
 .icons-cont li {
   padding: 0px 2px;
   cursor: pointer;
+  list-style: none;
+  margin-right: 30px;
 }
 
-
-.icons-cont li span{
+.icons-cont li span {
   padding: 0px 2px;
 }
 
-
-.nav-cont{
+.nav-cont {
   position: relative;
   background-color: var(--pri-dim-light-blue);
 }
 
-.overlay{
+.overlay {
   width: 100%;
-  background-image: url('/assets/images/gradient-bg.png');
+  background-image: url("/assets/images/gradient-bg.png");
   height: 100%;
   position: absolute;
-  background-position:top;
+  background-position: top;
   background-size: fill;
   z-index: 2;
 }
 
-.shade{
+.shade {
   width: 100%;
   height: 100%;
   background-color: rgba(19, 19, 19, 0.37);
   position: absolute;
-  background-position:top;
+  background-position: top;
   background-size: fill;
   z-index: 3;
 }
 
-
-.navbar{
+.navbar {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -262,8 +258,8 @@ header{
   list-style-type: none;
 }
 
-.navbar li a{
-  font-family:  Roboto, sans-serif;
+.navbar li a {
+  font-family: Roboto, sans-serif;
   color: white;
   text-decoration: none;
   position: relative;

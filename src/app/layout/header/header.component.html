@@ -1,8 +1,7 @@
 <header>
   <div class="top-header">
-    <div class="logo-cont">
+    <div>
       <img class="logo-size" src="../../../assets/images/abc-logo.jpeg" routerLink="/dashboard/dashboardpage" routerLinkActive="router-link-active" >
-      <h3>ABC'S Banking</h3>
     </div>
     <div class="search_bar">
       <input type="search" placeholder="Search here">
@@ -11,58 +10,58 @@
       </span>
   </div>
 
-  <div class="user-cont">
-    <p>
-      <span>Hello</span> ,
-      <span>{{currentUser?.firstName}} {{ currentUser?.lastName}}</span>
-      </p>
-    <a href="#">
-      <img src="/assets/images/profilePhoto.jpg" alt="">
-  </a>
-  </div>
+        <div class="user-cont">
+            <p>
+                <span>Hello</span> ,
+                <span>{{currentUser?.firstName}} {{ currentUser?.lastName}}</span>
+            </p>
+            <a href="#">
+                <img src="/assets/images/profile.png" alt="">
+            </a>
+        </div>
 
-  <ol class="icons-cont">
+        <ul class="icons-cont">
 
-    <li>
-      <a href="#">
-            <i class="fa-solid fa-bell"></i>
-        </a>
-    </li>
+            <li>
+                <a href="#">
+                    <img src="/assets/images/bell.png" alt="">
+                </a>
+            </li>
 
-        <li><a (click)="logout()"> <img class="IMG" src="./assets/images/logout.png" alt=""></a>
-        </li>
+            <li><a (click)="logout()"> <img class="IMG" src="./assets/images/logout.png" alt=""></a>
+            </li>
 
-    </ol>
-</div>
+        </ul>
+    </div>
 
-<div class="nav-con">
-    <ul class="Nav">
-        <li> <a class="link" routerLink="dashboardpage">Dashboard</a></li>
-        <li class="dropdown">
-            <div>
-                <button class="dropbtn"> Accounts <img src="./assets/images/downcaret.png" alt=""> </button>
-            </div>
+    <div class="nav-con">
+        <ul class="Nav">
+            <li> <a class="link" routerLink="dashboardpage">Dashboard</a></li>
+            <li class="dropdown">
+                <div>
+                    <button class="dropbtn"> Accounts <img src="./assets/images/downcaret.png" alt=""> </button>
+                </div>
 
-            <div class="dropdown-content">
-                <a class="link" (click)="goToAccounts()">Operative Accounts</a>
-                <a class="link" (click)="goToAccounts()" >Credit Cards</a>
-            </div>
+                <div class="dropdown-content">
+                    <a class="link" (click)="goToAccounts()">Operative Accounts</a>
+                    <a class="link" (click)="goToAccounts()">Credit Cards</a>
+                </div>
 
-        </li>
+            </li>
 
-        <li class="dropdown">
-            <div>
-                <button class="dropbtn"> Transactions <img src="./assets/images/downcaret.png" alt=""> </button>
-            </div>
+            <li class="dropdown">
+                <div>
+                    <button class="dropbtn"> Transactions <img src="./assets/images/downcaret.png" alt=""> </button>
+                </div>
 
-            <div class="dropdown-content">
-                <a class="link" routerLink="transfer">Transfer Funds</a>
-                <a class="link" routerLink="top-up">Top Up</a>
-            </div>
+                <div class="dropdown-content">
+                    <a class="link" routerLink="transfer">Transfer Funds</a>
+                    <a class="link" routerLink="top-up">Top Up</a>
+                </div>
 
         </li>
         <li> <a class="link" (click)="goToBillPayment()">Bill Payment</a></li>
-        <li><a class="link" routerLink="top-up">Top-up</a></li>
+        <li><a class="link" routerLink="top-up">My Profile</a></li>
     </ul>
     <div class="overlay"></div>
 </div>

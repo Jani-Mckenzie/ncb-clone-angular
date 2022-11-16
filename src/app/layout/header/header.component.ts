@@ -43,7 +43,6 @@ export class HeaderComponent implements OnInit {
   async goToAccounts(){
     this.router.navigate(['/dashboard/accounts']).then((val) => {
       DashboardComponent.currentPage = window.location.pathname;
-      window.location.reload();
     })
   }
 
@@ -51,7 +50,6 @@ export class HeaderComponent implements OnInit {
   async goToBillPayment(){
     this.router.navigate(['/dashboard/billpay']).then((val) => {
       DashboardComponent.currentPage = '/dashboard/billpay';
-      window.location.reload();
     })
   }
 

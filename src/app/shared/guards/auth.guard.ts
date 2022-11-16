@@ -43,11 +43,7 @@ export class AuthGuard implements CanActivate {
     if (this.isLogin()) {
       return true;
     }
-    // Swal.fire(
-    //   'Login Required',
-    //   'You must first login',
-    //   'error'
-    // )
+    
     this.router.navigate(['/auth/login']);
     return false;
   }

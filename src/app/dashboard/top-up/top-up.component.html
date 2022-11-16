@@ -1,1 +1,52 @@
-<p>top-up works!</p>
+<div class="mobile-cont">
+  <form action="" [formGroup]="topupForm" (ngSubmit)="topUp(topupForm)">
+    <h2 class="form-title">Mobile Top-up</h2>
+     <div class="form-ctrl">
+      <label for="">From Account</label>
+      <select name="fromAccount" id="" formControlName="fromAccount">
+        <option value="" disabled selected>Select your option</option>
+        <option *ngFor="let acc of accounts" value="{{acc._id}}"> {{acc.accType.name}} - {{acc.accNo}}</option>
+      </select>
+     </div>
+
+     <div class="form-ctrl">
+      <label for="">To Account</label>
+      <select name="toAccount" id="" formControlName="toAccount">
+        <option value="" disabled selected>Select your option</option>
+        <option *ngFor="let bene of beneficiaries" value="{{bene.accId}}">{{bene.name}} - {{bene.accNo}}</option>
+      </select>
+     </div>
+
+
+     <div class="form-ctrl">
+      <label for="">Bill Type*</label>
+      <select name="transactionType" id="" formControlName="transactionType">
+        <option value="{{creditId}}">Credit</option>
+        <option value="{{debitId}}">Debit</option>
+      </select>
+    </div>
+
+
+
+     <div class="inner-flex">
+      <select name="currency" id="">
+        <option value="JMD">JMD</option>
+        </select>
+        <div class="form-ctrl">
+          <input type="number" placeholder="Amount" formControlName="amount" min="1">
+        </div>
+    </div>
+
+    <div class="btn-cont">
+      <button class="btn" type="submit">Top Up</button>
+    </div>
+  </form>
+
+</div>
+
+
+<!-- <div style="height:500px;  overflow-y: scroll;">
+  <p>{{currentUser.beneficiaries | json }}</p>
+</div> -->
+
+

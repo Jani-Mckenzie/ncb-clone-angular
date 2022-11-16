@@ -53,6 +53,7 @@ header ol li {
   color: #fff;
   z-index: 999;
   position: relative;
+  cursor: pointer;
 }
 .nav-con ul li {
   list-style: none;
@@ -176,7 +177,12 @@ header {
 .user-cont p span {
   font-family: var(--pri-font);
 }
-
+.user-cont img {
+  height: 4vh;
+}
+.icons-cont img {
+  height: 3.5vh;
+}
 .user-cont p span:nth-child(2) {
   text-transform: uppercase;
   font-weight: bold;

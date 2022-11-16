@@ -16,7 +16,6 @@ export class AccountsComponent implements OnInit {
       this.currentUser = res;
       this.accounts = this.currentUser?.accounts;
     });
-    this.authService.autoLogin();
   }
 }
 

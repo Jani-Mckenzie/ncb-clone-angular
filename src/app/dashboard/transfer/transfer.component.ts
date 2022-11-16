@@ -45,7 +45,7 @@ export class TransferComponent implements OnInit {
 
   handleSubmit(): void {
     this.transferService.createTransfer(this.data).subscribe(res => {
-      if (res.status! === 'SUCCESS') {
+      if (res.status === 'SUCCESS') {
         Swal.fire(
           'Transfer Failed!',
           `Please ensure all fields are filled out properly`,

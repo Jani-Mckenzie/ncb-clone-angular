@@ -16,19 +16,19 @@
         <div class="card" *ngFor="let account of accounts">
             <div>
                 <p class="title">A/C Number</p>
-                <p class="detials">{{account?.accNo}}</p>
+                <p class="details">{{account?.accNo}}</p>
             </div>
             <div>
                 <p class="title">Account Name</p>
-                <p class="detials">{{account?.accType?.name}}</p>
+                <p class="details">{{account?.accType?.name}}</p>
             </div>
             <div>
                 <p class="title">Account Status</p>
-                <p class="detials">{{account?.status | currency}}</p>
+                <p class="details">{{account?.status | currency}}</p>
             </div>
             <div>
                 <p class="title">Account Balance</p>
-                <p class="detials">{{account?.balance | currency}}</p>
+                <p class="details">{{account?.balance | currency}}</p>
             </div>
         </div>
         <div *ngIf="!accounts.length" class="notify"> No available Accounts</div>

@@ -40,6 +40,7 @@ export class BillpayComponent implements OnInit {
         this.transactions = [...this.accounts[i].transactions];
       }
     });
+    this.authService.autoLogin();
   }
 
 

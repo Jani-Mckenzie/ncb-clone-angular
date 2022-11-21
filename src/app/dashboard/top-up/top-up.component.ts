@@ -36,6 +36,7 @@ export class TopUpComponent implements OnInit {
         this.transactions = [...this.accounts[i].transactions];
       }
     });
+    this.authService.autoLogin();
   }
 
   topupForm = new FormGroup({

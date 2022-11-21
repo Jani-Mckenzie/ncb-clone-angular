@@ -1,9 +1,8 @@
-<div class="container">
-
-
+<div class="transfer-cont">
+  <h2 class="form-title">Transfer Funds</h2>
     <form #form="ngForm" (ngSubmit)="form.valid && handleSubmit()">
         <div class="inputs">
-            <div class="form-control">
+            <div class="form-ctrl">
                 <label for="fromAccount">From Account</label>
                 <select [(ngModel)]="data.fromAccount" name="fromAccount" id="fromAccount" required>
                     <option value="">Select</option>
@@ -12,7 +11,7 @@
                 </select>
             </div>
 
-            <div class="form-details">
+            <div class="form-ctrl">
                 <label for="toAccount">Benficiary</label>
                 <select name="toAccount" id="toAccount" [(ngModel)]="data.toAccount" required>
                     <option value="">Select</option>
@@ -24,13 +23,20 @@
             </div>
         </div>
 
-        <div class="inputs">
-            <div class="form-control">
+        <div class="inner-flex">
+          <select name="currency" id="">
+            <option value="JMD">JMD</option>
+            </select>
+            <div class="form-ctrl">
                 <label for="amount"></label>
                 <input type="number" [(ngModel)]="data.amount" id="amount" name="amount" required>
             </div>
         </div>
-        <button (click)="handleSubmit()">Submit</button>
+
+        <div class="btn-cont">
+          <button class="btn" type="submit">Transfer</button>
+        </div>
+
     </form>
 
 

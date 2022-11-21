@@ -31,6 +31,7 @@ export class DashboardComponent implements OnInit{
     this.authService.loggedInUser$.subscribe(res => {
       this.loggedInUser = res;
       this.currentUser = this.loggedInUser;
+      console.log(this.loggedInUser);
     });
     this.authService.autoLogin();
 

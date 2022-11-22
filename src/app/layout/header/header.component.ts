@@ -42,6 +42,7 @@ export class HeaderComponent implements OnInit {
 
   async goToAccounts(){
     this.router.navigate(['/dashboard/accounts']).then((val) => {
+      window.location.reload();
       DashboardComponent.currentPage = window.location.pathname;
     })
   }

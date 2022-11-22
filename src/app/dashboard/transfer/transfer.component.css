@@ -50,3 +50,9 @@
 .btn-cont{
   margin-top: 20px;
 }
+
+.btn[disabled]{
+background-color:  lightgray;
+
+cursor:not-allowed;
+}

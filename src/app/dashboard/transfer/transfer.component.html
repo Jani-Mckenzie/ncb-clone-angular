@@ -29,12 +29,12 @@
             </select>
             <div class="form-ctrl">
                 <label for="amount"></label>
-                <input type="number" [(ngModel)]="data.amount" id="amount" name="amount" required>
+                <input type="number" [(ngModel)]="data.amount" id="amount" name="amount" required min="1">
             </div>
         </div>
 
         <div class="btn-cont">
-          <button class="btn" type="submit">Transfer</button>
+          <button class="btn" type="submit" [disabled]="!form.valid">Transfer</button>
         </div>
 
     </form>

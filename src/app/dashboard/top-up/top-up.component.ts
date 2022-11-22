@@ -24,6 +24,7 @@ export class TopUpComponent implements OnInit {
   creditCards?: any = [];
   creditId = this.transService.creditId;
   debitId = this.transService.debitId;
+  conversionRate = 1.2;
 
   ngOnInit(): void {
     this.authService.loggedInUser$.subscribe(res => {
@@ -42,7 +43,8 @@ export class TopUpComponent implements OnInit {
   topupForm = new FormGroup({
     fromAccount: new FormControl('', [Validators.required]),
     toAccount: new FormControl('', [Validators.required]),
-    billType: new FormControl('', [Validators.required]),
+    company : new FormControl('', [Validators.required]),
+    transactionType: new FormControl('', [Validators.required]),
     amount: new FormControl( 0, [Validators.required]),
   })
 

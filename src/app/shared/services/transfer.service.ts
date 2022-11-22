@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap, throwError } from 'rxjs';
 import { ApiResponse } from '../models/api_response.model';
 import { CreatedTransfer } from '../models/createdTransfer';
 import { Transfer } from '../models/transfer.interface';
@@ -25,7 +25,7 @@ export class TransferService {
     return this.http.post<ApiResponse<CreatedTransfer>>(this.API_ENDPOINT,body,this.options)
     .pipe(
       tap(transfer => console.log(JSON.stringify(transfer))),
-      catchError(err => this.handleErrors(err))
+      catchError(err => throwError(() => err))
     );
   }
 

@@ -31,6 +31,13 @@ export class TransferComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getAuthUser();
+
+  }
+
+
+
+  getAuthUser(){
     this.authService.loggedInUser$.subscribe(res => {
       this.currentUser = res;
       this.accounts = this.currentUser?.accounts;
@@ -44,16 +51,44 @@ export class TransferComponent implements OnInit {
 
 
   handleSubmit(): void {
-    this.transferService.createTransfer(this.data).subscribe(res => {
-      if (res.status === 'SUCCESS') {
-        Swal.fire(
-          'Transfer Failed!',
-          `Please ensure all fields are filled out properly`,
-          'warning'
-        )
-      }
 
-    })
+    if(this.data.amount < 100){
+      Swal.fire(
+        'Insufficent Amount!',
+        `Transfers must be at least $100.00 JMD your current amount is $${this.data.amount} JMD `,
+        'warning'
+      )
+    }else{
+      this.transferService.createTransfer(this.data).subscribe({
+        next : (res) =>{
+          if (res.status === 'SUCCESS') {
+            Swal.fire(
+              'Transfer Successful!',
+              `You have sucessfullt transferred $${this.data.amount} dollars to account ${this.data.toAccount}`,
+              'success'
+            )
+
+            this.data = {
+              fromAccount: '',
+              toAccount: '',
+              amount: 0
+            }
+
+            this.getAuthUser();
+          }
+        },
+        error :(err) => {
+          if(err.error){
+            Swal.fire(
+              'All Fields are required!',
+              `Please fully fill out the form`,
+              'warning'
+            )
+          }
+        },
+      })
+    }
+
 
     // console.log(this.data.amount, this.data.toAccount, this.data.fromAccount, this.data)
   }

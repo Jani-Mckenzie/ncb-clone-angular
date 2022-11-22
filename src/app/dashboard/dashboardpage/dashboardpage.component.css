@@ -61,12 +61,13 @@
 }
 
 .card-sub {
-  height: calc(700px - 90px);
+  height: calc(100% - 90px);
   overflow: scroll;
   height: -o-calc(700px - 90px); /* opera */
   height: -webkit-calc(700px - 90px); /* google, safari */
   height: -moz-calc(700px - 90px); /* firefox */
   padding-right: 17px;
+  overflow-x: hidden;
 }
 
 .Dropdown3 {

@@ -64,11 +64,21 @@ export class LoginComponent implements OnInit {
           }
         },
         error: (err: HttpErrorResponse) => {
-          if (err?.error?.data?.error === "User not found") {
+          console.log(err);
+          if (err?.error?.data?.error === "Invalid Credentials") {
             this.loginCount++;
             Swal.fire(
               'Login Failed!',
               `Invalid Credentials ${this.loginCount}`,
+              'warning'
+            )
+          }
+
+          if (err?.error?.data?.error === "User not found") {
+            this.loginCount++;
+            Swal.fire(
+              'Login Failed!',
+              `Invalid Username ${this.loginCount}`,
               'warning'
             )
           }

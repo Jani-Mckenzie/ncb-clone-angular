@@ -22,7 +22,7 @@ export class BillpayComponent implements OnInit {
 
 
   billForm = new FormGroup({
-    transactionType: new FormControl('', [Validators.required]),
+    transactionType: new FormControl(this.debitId, [Validators.required]),
     accountId: new FormControl('', [Validators.required]),
     amount: new FormControl( 0, [Validators.required]),
     description: new FormControl('', [Validators.required]),

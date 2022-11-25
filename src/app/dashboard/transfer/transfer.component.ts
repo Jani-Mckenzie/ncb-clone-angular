@@ -7,6 +7,7 @@ import { TransferService } from 'src/app/shared/services/transfer.service';
 import { AccountService } from 'src/app/shared/services/account.service';
 import { Account } from 'src/app/shared/models/account.model';
 import Swal from 'sweetalert2';
+import { Beneficiary } from 'src/app/shared/models/beneficiary.model';
 
 
 @Component({
@@ -59,11 +60,18 @@ export class TransferComponent implements OnInit {
       this.transferService.createTransfer(this.data).subscribe({
         next : (res) =>{
           if (res.status === 'SUCCESS') {
+
+            let currBeneficiary = this.beneficiaries.find((bene : Beneficiary) => {
+              return bene.accId == this.data.toAccount
+            })
+
+
             Swal.fire(
               'Transfer Successful!',
-              `You have sucessfullt transferred $${this.data.amount} dollars to account ${this.data.toAccount}`,
+              `You have sucessfully transferred $${this.data.amount} dollars to ${currBeneficiary.name}'s account `,
               'success'
             )
+
 
             this.data = {
               fromAccount: '',

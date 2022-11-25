@@ -49,20 +49,24 @@
             </summary>
 
             <div class="card-sub">
-                <div class="card" *ngFor="let transaction of transactions ">
-                    <div>
-                        <p class="title">A/C Number</p>
-                        <p class="detials">{{transaction.accId}}</p>
-                    </div>
-                    <div>
-                        <p class="title">Description</p>
-                        <p class="detials">{{transaction.description}}</p>
-                    </div>
-                    <div>
-                        <p class="title">Date</p>
-                        <p class="detials">{{transaction.createdAt | date}}</p>
-                    </div>
-                </div>
+              <div *ngFor="let account of accounts; let i = index">
+                <div class="card" *ngFor="let transaction of accounts[i].transactions ">
+
+                  <div>
+                      <p class="title">A/C Number</p>
+                      <p class="details">{{accounts[i].accNo}}</p>
+                  </div>
+                  <div>
+                      <p class="title">Description</p>
+                      <p class="details">{{transaction.description}}</p>
+                  </div>
+                  <div>
+                      <p class="title">Date</p>
+                      <p class="details">{{transaction.createdAt | date}}</p>
+                  </div>
+              </div>
+              </div>
+
 
             </div>
 

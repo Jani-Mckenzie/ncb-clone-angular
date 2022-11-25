@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap, throwError } from 'rxjs';
 import { createTransaction } from '../models/createTransaction';
 import { Transaction } from '../models/transaction.model';
 
@@ -27,7 +27,7 @@ export class TransactionService {
     return this.http.post<Transaction>(this.API_ENDPOINT, body , this.options)
     .pipe(
       tap(transaction => console.log(JSON.stringify(transaction))),
-      catchError(err => this.handleErrors(err))
+      catchError(err => throwError(() => err))
     )
   }
 
@@ -35,7 +35,7 @@ export class TransactionService {
     return this.http.get<Transaction>(`${this.API_ENDPOINT}/${id}`, this.options)
     .pipe(
       tap(transaction => console.log(JSON.stringify(transaction))),
-      catchError(err => this.handleErrors(err))
+      catchError(err => throwError(() => err))
     )
   }
 

@@ -4,15 +4,17 @@
     <div class="form-ctrl">
       <label for="">Choose An Account*</label>
       <select name="accountId" id="" formControlName="accountId">
-        <option *ngFor="let acc of accounts" value="{{acc._id}}"> {{acc._id}}</option>
+        <option *ngFor="let acc of accounts" value="{{acc._id}}"> {{acc?.accType?.name}}({{acc.accNo}}) -
+          {{acc?.balance |currency}}
+        </option>
+
       </select>
     </div>
     <div class="upper-flex">
     <div class="form-ctrl">
       <label for="">Bill Type*</label>
       <select name="transactionType" id="" formControlName="transactionType">
-        <option value="{{creditId}}">Credit</option>
-        <option value="{{debitId}}">Debit</option>
+        <option value="{{debitId}}" selected >Debit</option>
       </select>
     </div>
 
@@ -41,7 +43,8 @@
   </div>
 
   <div class="btn-cont">
-    <button class="btn" type="submit">Pay bill</button>
+    <button class="btn" type="submit" [disabled]="!billForm.valid">Pay bill</button>
   </div>
   </form>
 </div>
+

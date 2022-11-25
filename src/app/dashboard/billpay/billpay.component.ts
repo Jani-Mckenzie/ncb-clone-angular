@@ -31,6 +31,11 @@ export class BillpayComponent implements OnInit {
   constructor(private authService : AuthService , private transService : TransactionService) { }
 
   ngOnInit(): void {
+    this.getAuthUser();
+  }
+
+
+  getAuthUser(){
     this.authService.loggedInUser$.subscribe(res => {
       this.currentUser = res;
       this.accounts = this.currentUser?.accounts;
@@ -46,11 +51,10 @@ export class BillpayComponent implements OnInit {
 
 
   payBill(form:any){
-
     if(this.billForm.valid){
       let formVal : createTransaction = {
         transactionType : this.transactionType?.value!,
-        accountId : this.accounts[0]._id,
+        accountId : this.accountId?.value!,
         amount : this.amount?.value!,
         description: this.description?.value!
       };
@@ -63,6 +67,7 @@ export class BillpayComponent implements OnInit {
           '',
           'success'
         )
+        this.getAuthUser();
         this.billForm.reset()
       },
 

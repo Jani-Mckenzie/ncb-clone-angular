@@ -32,16 +32,13 @@ export class TransferComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAuthUser();
-
   }
-
 
 
   getAuthUser(){
     this.authService.loggedInUser$.subscribe(res => {
       this.currentUser = res;
       this.accounts = this.currentUser?.accounts;
-      // console.log(this.accounts)
       this.beneficiaries = this.currentUser?.beneficiaries;
     });
     this.authService.autoLogin();

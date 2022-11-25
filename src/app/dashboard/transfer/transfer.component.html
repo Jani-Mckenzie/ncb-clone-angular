@@ -6,8 +6,9 @@
                 <label for="fromAccount">From Account</label>
                 <select [(ngModel)]="data.fromAccount" name="fromAccount" id="fromAccount" required>
                     <option value="">Select</option>
-                    <option *ngFor="let account of accounts" [value]="account?._id">{{account?.accType?.name}}
-                        {{account?.balance |currency}}</option>
+                    <option *ngFor="let account of accounts" [value]="account?._id">{{account?.accType?.name}}({{account.accNo}}) -
+                      {{account?.balance |currency}}</option>
+
                 </select>
             </div>
 

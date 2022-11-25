@@ -38,10 +38,14 @@
   color: rgba(0, 0, 0, 0.603);
 }
 .details {
-  font-size: 0.5em;
-  font-weight: 900;
+  width: fit-content;
+  padding: 0px 0px;
+  font-size: 0.9em;
+  font-weight: 300;
   color: black;
+  line-height: 1.55;
 }
+
 
 .head {
   padding-left: 25px;

@@ -59,6 +59,14 @@
   background-color: var(--pri-blue);
 }
 
+.btn[disabled]{
+  background-color:  lightgray;
+  cursor:not-allowed;
+  }
 
+
+.form-ctrl:nth-child(3) input{
+  width: 90%;
+}
 
 

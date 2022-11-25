@@ -5,32 +5,29 @@
       <label for="">From Account</label>
       <select name="fromAccount" id="" formControlName="fromAccount">
         <option value="" disabled selected>Select your option</option>
-        <option *ngFor="let acc of accounts" value="{{acc._id}}"> {{acc.accType.name}} - {{acc.accNo}}</option>
+        <option *ngFor="let acc of accounts" value="{{acc._id}}"> {{acc?.accType?.name}}({{acc.accNo}}) -
+          {{acc?.balance |currency}}</option>
       </select>
      </div>
 
      <div class="form-ctrl">
-      <label for="">To Account</label>
-      <select name="toAccount" id="" formControlName="toAccount">
-        <option value="" disabled selected>Select your option</option>
-        <option *ngFor="let bene of beneficiaries" value="{{bene.accId}}">{{bene.name}} - {{bene.accNo}}</option>
-      </select>
+      <label for="">Recipient's Phone number</label>
+      <input type="text" name="toRecipient" formControlName="toRecipient">
      </div>
 
 
-     <div class="form-ctrl">
+     <!-- <div class="form-ctrl">
       <label for="">Bill Type*</label>
       <select name="transactionType" id="" formControlName="transactionType">
-        <option value="{{creditId}}">Credit</option>
         <option value="{{debitId}}">Debit</option>
       </select>
-    </div>
+    </div> -->
 
     <div class="form-ctrl">
       <label for="">Pick a Company</label>
-      <select name="transactionType" id="" formControlName="transactionType">
-        <option value="{{creditId}}">Digicel</option>
-        <option value="{{debitId}}">Flow</option>
+      <select name="company" id="" formControlName="company">
+        <option value="Digicel">Digicel</option>
+        <option value="Flow">Flow</option>
       </select>
     </div>
 
@@ -46,15 +43,11 @@
     </div>
 
     <div class="btn-cont">
-      <button class="btn" type="submit">Top Up</button>
+      <button class="btn" type="submit" [disabled]="!topupForm.valid">Top Up</button>
     </div>
   </form>
 
 </div>
 
-
-<!-- <div style="height:500px;  overflow-y: scroll;">
-  <p>{{currentUser.beneficiaries | json }}</p>
-</div> -->
 
 
